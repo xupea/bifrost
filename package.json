@@ -1,0 +1,24 @@
+{
+  "name": "bifrost",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cmake-js compile",
+    "test-get": "node test-get-conversations.js",
+    "test-watch": "node test-watch-conversations.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "cmake-js": "^7.2.1",
+    "node-addon-api": "^7.0.0"
+  },
+  "binary": {
+    "napi_versions": [
+      7
+    ]
+  }
+}
