@@ -1,11 +1,5 @@
 #include <napi.h>
-#include <chrono>
-#include <iostream>
-#include <thread>
-#include <fstream>
-#include <unordered_map>
 #include "conversation_worker.h"
-#include "file_watcher.h"
 
 Napi::Value getConversationList(const Napi::CallbackInfo &info)
 {
@@ -40,7 +34,7 @@ Napi::Value watchConversationList(const Napi::CallbackInfo &info)
   Napi::Function emit = info[0].As<Napi::Function>();
 
   // 存储回调函数的引用，以便后续调用
-  sessionListChangeCallback = Napi::Persistent(callback);
+  sessionListChangeCallback = Napi::Persistent(emit);
 
   return env.Undefined();
 }
